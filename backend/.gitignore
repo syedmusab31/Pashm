@@ -1,0 +1,47 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+logs/*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Debugging files
+*.tsbuildinfo
+
+# Runtime data
+coverage/
+lib-cov/
+.cache/
+.next/
+out/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+
+# Build files (if using TypeScript or Babel)
+dist/
+build/
+
+# Database dumps
+
+*.mongodb
+
+# Uploads (optional: only if not storing permanently in repo)
+uploads/
