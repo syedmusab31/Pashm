@@ -11,11 +11,12 @@ const app = express();
 
 // ✅ Security Middleware
 app.use(helmet());
-app.use(cors({
-  origin: env.CORS_ORIGIN || "*",
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-  credentials: true
-}));
+// // app.use(cors({
+// //   origin: env.CORS_ORIGIN || "*",
+// //   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+// //   credentials: true
+// }));
+app.use(cors());
 app.use(express.json());
 
 // ✅ Request Logging
@@ -30,13 +31,21 @@ app.get("/", (req, res) => {
 app.use("/api/v1", routes);
 
 // ✅ Error Handling (extra security)
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: "Something went wrong!" });
-});
+// app.use((err, req, res, next) => {
+//   console.error(err.stack);
+//   res.status(500).json({ message: err.message || "Something went wrong!"});
+// });
 
 // ✅ Server
 const PORT = env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+
+//dev api flow 
+// Authentication APIs
+// Product APIs
+// Cart APIs
+// Order APIs
+// Account APIs
+// Admin APIs
